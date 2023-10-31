@@ -50,4 +50,5 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
-> If you would like to contribute, check the contribution guide.
+  If you would like to contribute, ➡️ check the contribution guide or open pull request.
+  If you would like to suggest new feature or report bug, ➡️ create an issue.
