@@ -1,20 +1,33 @@
-# create-svelte
+# NCEF Website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## About this project
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+This is the website for the Nepal Christian Engineers Fellowship, a non-profit organization based in Nepal.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
 
 ## Developing
+
+
+Git clone this repo
+
+```bash
+git clone https://github.com/ncef-nepal/ncefwebsite.git
+```
+
+Open the repo folder
+```bash
+cd ncefwebsite
+# Open in VSCode
+code ncefwebsite
+```
+
+Install the dependency
+> Note: Please make sure you have Node.js > 18 installed in your device
+```bash
+pnpm install
+```
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
@@ -36,3 +49,5 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+> If you would like to contribute, check the contribution guide.
