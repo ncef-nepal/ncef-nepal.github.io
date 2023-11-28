@@ -1,0 +1,667 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero3.astro';
+// import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import Events from '~/components/widgets/Events.astro';
+import Content from '~/components/widgets/Content.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'NCEF Home Page',
+  description: 'NCEF stands for Nepal Christian Engineer Fellowship',
+  ignoreTitleTemplate: true,
+};
+
+const events = [
+  {
+    title: 'Event 1',
+    description: `We provide training in spiritual and professional excellence, encouraging, coaching, and mentoring young engineers to reach their full potential.Description for Event 1 Description for Event 1 Description for Event 1 Description for Event 1 `,
+    icon: 'tabler:star',
+    classes: { class1: 'value1', class2: 'value2' },
+    callToAction: { label: 'Register', action: 'registration-link-1' },
+    image: {
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    },
+    badge: 'New',
+    badgeColor: 'green',
+    href: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+    date: new Date('2023-12-01T10:00:00'),
+    location: 'Event Venue 1',
+    duration: '2 hours',
+    status: 'Cancelled',
+  },
+  {
+    title: 'Event 2',
+    description: 'Description for Event 2',
+    icon: 'tabler:calendar',
+    classes: { class1: 'value3', class2: 'value4' },
+    callToAction: { label: 'RSVP', action: 'rsvp-link-2' },
+    image: {
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    },
+    badge: 'Featured',
+    badgeColor: 'blue',
+    href: 'event-2-details',
+    date: new Date('2023-12-05T15:30:00'),
+    location: 'Event Venue 2',
+    duration: '3 hours',
+  },
+  {
+    title: 'Event 3',
+    description: 'Description for Event 3',
+    icon: 'tabler:ticket',
+    classes: { class1: 'value5', class2: 'value6' },
+    callToAction: { label: 'Buy Tickets', action: 'ticket-link-3' },
+    image: {
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    },
+    badge: 'Exclusive',
+    badgeColor: 'red',
+    href: 'event-3-details',
+    date: new Date('2023-12-10T18:00:00'),
+    location: 'Event Venue 3',
+    duration: '4 hours',
+  },
+  {
+    title: 'Event 4',
+    description: 'Description for Event 4',
+    icon: 'tabler:info-circle',
+    classes: { class1: 'value7', class2: 'value8' },
+    callToAction: { label: 'Learn More', action: 'info-link-4' },
+    image: {
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    },
+    badge: 'Special',
+    badgeColor: 'orange',
+    href: 'event-4-details',
+    date: new Date('2023-12-15T12:45:00'),
+    location: 'Event Venue 4',
+    duration: '1.5 hours',
+  },
+  {
+    title: 'Event 5',
+    description: 'Description for Event 5',
+    icon: 'tabler:users',
+    classes: { class1: 'value9', class2: 'value10' },
+    callToAction: { label: 'Join Now', action: 'join-link-5' },
+    image: {
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    },
+    badge: 'Limited Seats',
+    badgeColor: 'purple',
+    href: 'event-5-details',
+    date: new Date('2023-12-20T09:30:00'),
+    location: 'Event Venue 5',
+    duration: '2.5 hours',
+  },
+];
+
+const boardMembers = [
+  {
+    title: 'PRESIDENT',
+    name: 'SUK BAHDUR TAMANG',
+    image: { src: '~/assets/images/chairman.jpg', alt: 'Man' },
+    description: 'Some Important description of Lorem Ipsum ',
+    socials: [
+      {
+        icon: 'tabler:brand-facebook',
+        href: 'https://facebook.com',
+      },
+      {
+        icon: 'tabler:brand-instagram',
+        href: 'https://instagram.com',
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        href: 'https://linkedin.com',
+      },
+      {
+        icon: 'tabler:brand-twitter',
+        href: 'https://twitter.com',
+      },
+      {
+        icon: 'tabler:mail',
+        href: 'mailto:example@example.com',
+      },
+    ],
+    responsibilities: [
+      'Chairperson of the group',
+      'Organizes activities',
+      'Presides over meetings and activities',
+      'Uses parliamentary procedure during business meeting',
+      'Attends and represents NCEF at Conference and General Meetings',
+    ],
+  },
+  {
+    title: 'VICE PRESIDENT',
+    name: 'SHALOM DAHAL',
+    image: { src: '~/assets/images/man.jpg', alt: 'Man' },
+    description: 'Some Important description of Lorem Ipsum ',
+    socials: [
+      {
+        icon: 'tabler:brand-facebook',
+        href: 'https://facebook.com',
+      },
+      {
+        icon: 'tabler:brand-instagram',
+        href: 'https://instagram.com',
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        href: 'https://linkedin.com',
+      },
+      {
+        icon: 'tabler:brand-twitter',
+        href: 'https://twitter.com',
+      },
+      {
+        icon: 'tabler:mail',
+        href: 'mailto:example@example.com',
+      },
+    ],
+    responsibilities: [
+      'Presides in absence of president at any meeting',
+      'Assists president to fulfill duties',
+      'Promotes group participations',
+      'Responsible for opening prayer in meetings',
+      'Responsible for any formed committees.',
+    ],
+  },
+  {
+    title: 'TREASURER',
+    name: 'RAJEEV MAHARJAN',
+    image: { src: '~/assets/images/dan.jpg', alt: 'Man' },
+    socials: [
+      {
+        icon: 'tabler:brand-facebook',
+        href: 'https://facebook.com',
+      },
+      {
+        icon: 'tabler:brand-instagram',
+        href: 'https://instagram.com',
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        href: 'https://linkedin.com',
+      },
+      {
+        icon: 'tabler:brand-twitter',
+        href: 'https://twitter.com',
+      },
+      {
+        icon: 'tabler:mail',
+        href: 'mailto:example@example.com',
+      },
+    ],
+    description: 'Some Important description of Lorem Ipsum ',
+    responsibilities: [
+      'Keep accounts and presents an updated financial summary for meetings',
+      'Collects all dues',
+      'Deposits NCEF’s funds',
+      'Makes expenditures in a manner approved by the business office for Organization',
+    ],
+  },
+  {
+    title: 'SECRETARY',
+    name: 'BIJAY GURUNG',
+    image: { src: '~/assets/images/man.jpg', alt: 'Man' },
+    description: 'Some Important description of Lorem Ipsum ',
+    socials: [
+      {
+        icon: 'tabler:brand-facebook',
+        href: 'https://facebook.com',
+      },
+      {
+        icon: 'tabler:brand-instagram',
+        href: 'https://instagram.com',
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        href: 'https://linkedin.com',
+      },
+      {
+        icon: 'tabler:brand-twitter',
+        href: 'https://twitter.com',
+      },
+      {
+        icon: 'tabler:mail',
+        href: 'mailto:example@example.com',
+      },
+    ],
+    responsibilities: [
+      'Sends out agenda and takes the minutes of each meeting',
+      'Reads and posts minutes of the preceding meeting',
+      'Responsible for email, prayer bulletin, News bulletins and email to NCEF members about meetings and activities',
+    ],
+  },
+  {
+    title: 'MEETING COORDINATOR',
+    name: '(Vacant)',
+    description: 'Some Important description of Lorem Ipsum ',
+    responsibilities: ['Coordinates programs & Speakers', 'Writes/speaks Thank you notes to speakers and guests'],
+  },
+  {
+    title: 'PUBLICITY COORDINATOR',
+    name: '(Vacant)',
+    description: 'Some Important description of Lorem Ipsum ',
+    responsibilities: [
+      'In charge of updating Facebook/Website Page',
+      'Chalking and writing on bulletin boards',
+      'Shared responsibilities with executive members',
+      'Updating profile, events, and working with get involved',
+    ],
+  },
+  {
+    title: 'EXECUTIVE MEMBERS',
+    name: '(Vacant)',
+    description: 'Some Important description of Lorem Ipsum ',
+    responsibilities: [
+      'Shares in any of the above-mentioned responsibilities',
+      'Leads and organizes prayer groups/monthly fellowship',
+      'Represents their engineering discipline at meetings and functions.',
+    ],
+  },
+];
+
+const faqItems = [
+  {
+    title: 'Is NCEF exclusively for engineers?',
+    description:
+      'No, while founded by engineers, NCEF welcomes professionals from diverse fields, including architects, sub-engineers, and project managers.',
+  },
+  {
+    title: 'How can I join NCEF?',
+    description:
+      'To join NCEF, simply visit our membership page and follow the registration process. We look forward to welcoming you into our community!',
+  },
+  {
+    title: 'Does NCEF organize events outside Nepal?',
+    description:
+      'NCEF primarily focuses on empowering Christian engineers in Nepal. However, we recognize the value of global experiences and connections, fostering networking and collaboration.',
+  },
+  {
+    title: 'Is NCEF affiliated with any international organizations?',
+    description:
+      'Yes, NCEF collaborates with organizations such as the International Fellowship of Evangelical Students (IFES) for leadership training, fostering global connections and enriching our community.',
+  },
+  {
+    title: 'Can non-Christians join NCEF?',
+    description:
+      "While NCEF is rooted in Christian values, we welcome individuals from all backgrounds who share a passion for engineering and a commitment to our community's goals of learning, networking, and building faith and professionalism.",
+  },
+];
+
+const activitiesList = [
+  {
+    title: 'Coming Together: Prayer, Fellowship, Mentoring',
+    description:
+      'We foster community through prayer, fellowship, and mentoring in both physical and virtual settings. Regular formal meetings and informal support create a network that spans students and graduates, seeking widespread recognition in Nepal.',
+    icon: 'tabler:users',
+  },
+  {
+    title: 'Leadership and Capacity Building',
+    description:
+      'We provide training in spiritual and professional excellence, encouraging, coaching, and mentoring young engineers to reach their full potential.',
+    icon: 'tabler:star-half',
+  },
+  {
+    title: 'Outreach: Supporting Infrastructure',
+    description:
+      'We offer support for infrastructure planning, design, and construction management for churches, community groups, and non-profit organizations (GOs/NGOs). Our services may be pro bono or at-cost.',
+    icon: 'tabler:tools',
+  },
+  {
+    title: 'Networking: Connecting Talent',
+    description:
+      'Members network within CEF International, local churches, and NGOs. We share employment opportunities, supporting members in finding fulfilling work and developing their careers. Our goal is to retain talent for Nepal while recognizing the value of gaining global experience.',
+    icon: 'tabler:share',
+  },
+  {
+    title: 'Leadership Empowerment: Building Sustainable Futures',
+    description:
+      'Our activities focus on empowering citizen engineers and leaders in building and sustainability. We aim to improve people’s quality of life by being good stewards of our technical, economic, social, and environmental talents.',
+    icon: 'tabler:rocket',
+  },
+];
+
+const testimonalList = [
+  {
+    testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
+    name: 'Emily Kennedy',
+    job: 'Front-end developer',
+    image: {
+      src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
+      alt: 'Emily Kennedy Image',
+    },
+  },
+  {
+    testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
+    name: 'Sarah Hansen',
+    job: 'Photographer',
+    image: {
+      src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Sarah Hansen Image',
+    },
+  },
+  {
+    testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
+    name: 'Mark Wilkinson',
+    job: 'Small business owner',
+    image: {
+      src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+      alt: 'Mark Wilkinson Image',
+    },
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Empowering Faith, Engineering Futures."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Explore Events',
+        href: '#events',
+        // target: '_blank',
+        icon: 'tabler:calendar-event',
+      },
+      { text: 'About Us', href: '#about' },
+    ]}
+    image={{ src: '~/assets/images/blueprint.jpg', alt: 'Community' }}
+  >
+    <Fragment slot="title">Nepal Christian Engineer's Fellowship</Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">NCEF</span> is a unique platform cultivating a community where aspiring Christian
+        engineers in Nepal flourish. Through immersive experiences, mentorship, and networking, we blend technical
+        excellence with unwavering values for an innovative future.
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600"></span>
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    tagline=""
+    title="About NCEF"
+    subtitle="Empowering Faith, Engineering Futures."
+    items={[
+      {
+        title: 'Our Roots: The 1990s Christian University Student Movement',
+        description:
+          "Our Fellowship traces its origins to the dynamic Christian University Student Movement in Nepal (NBCBS/University Student Fellowship) during the 1990s. Inspired by the biblical mandate in Matthew 5:13-16, Christian engineering students and graduates united with the vision to be 'salt and light.'",
+        icon: 'tabler:plant',
+      },
+      {
+        title: 'Formation and Growth: Prayer Cells, Bible Study Groups, and Annual Seminars',
+        description:
+          'Encouraged by parachurch organizations and local churches, our members formed prayer cells and Bible study groups across colleges and universities. Annual seminars became a cornerstone, fostering fellowship and a shared commitment to excellence.',
+        icon: 'tabler:leaf',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Introduction and Legacy</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Global Connections: Partnership with IFES for Leadership Training and CGF',
+        description:
+          'In pursuit of continuous growth, we forged partnerships with the International Fellowship of Evangelical Students (IFES) for Leadership Training and collaborated with Christian Graduate Fellowship (CGF). These global connections enriched our community and broadened our perspectives.',
+        icon: 'tabler:flower',
+      },
+      {
+        title: 'Inclusive Community: Welcoming Diverse Professionals',
+        description:
+          'Beyond Christian engineers, our fellowship extends a warm welcome to professionals such as architects, sub-engineers, overseers, draftspersons, project managers, and surveyors. This diversity enriches our collective knowledge and expertise.',
+        icon: 'tabler:seeding',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Service Beyond Ourselves: Support for Churches and Related Organizations',
+        description:
+          'Driven by a commitment to serve, we offer support to churches and various organizations. From concept planning to construction management, our contributions span diverse projects, including Church Buildings, Orphanage Homes, Bible Colleges, Training Centers, Water Supply, Small Irrigation, and Suspension Bridges.',
+        icon: 'tabler:growth',
+      },
+      {
+        title: 'Join Our Legacy: Embrace Service and Excellence',
+        description:
+          'We invite you to join us in a legacy of service and excellence. Whether you are an aspiring professional or an experienced expert, become a part of our community dedicated to making a positive impact in Nepal and beyond.',
+        icon: 'tabler:north-star',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Mission Widget **************** -->
+
+  <Content
+    id="mission"
+    tagline=""
+    items={[
+      {
+        title: 'Empower, Equip, Encourage',
+        description:
+          'Established by the inspiration of the word of God to be salt and light on Earth (Matthew 5:13-16), NCEF (Nepal) is on a mission to empower, equip, and encourage our members to achieve their full potential in realizing the vision of our Fellowship.',
+        icon: 'tabler:map',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mission:</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Vision Widget **************** -->
+
+  <Content
+    isReversed
+    id="vision"
+    tagline=""
+    items={[
+      {
+        title: 'Transforming Lives',
+        description:
+          'Using the professional skills and talents entrusted to us, our vision is to witness a world transformed by the life-changing reality of the gospel. People discovering Jesus as their Lord and Savior, experiencing the fullness of life He offers.',
+        icon: 'tabler:telescope',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Vision:</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Statement of Faith Widget **************** -->
+
+  <Content
+    id="statement_of_faith"
+    tagline=""
+    items={[
+      {
+        title: 'Anchored in Belief',
+        description:
+          'Our members, rooted in local churches, hold firm to the authority of the Bible and profess the Apostle’s Creed as a summary of our shared faith.',
+        icon: 'tabler:book',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Statement of Faith:</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Note Widget ******************* -->
+
+  <!-- <Note /> -->
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="activities"
+    tagline="Activities"
+    title="NCEF Activities: Shaping Tomorrow"
+    subtitle="NCEF organizes a rich collection of activities that aim to engage and empower our members."
+    items={activitiesList}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Events
+    id="events"
+    title="NCEF Events Calendar"
+    subtitle="NCEF organizes a rich collection of activities that aim to engage and empower our members."
+    items={events}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features4 title="Board Members" subtitle="Meet the team behind NCEF" id="board" tagline="Board" items={boardMembers}>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features4>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <!-- <BlogLatestPosts
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
+                `}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    id="faqs"
+    title="Frequently Asked Questions"
+    subtitle="Here are some of our FAQs. If you are new to our website, you may find some answers"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={faqItems}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    id="stats"
+    tagline="stats"
+    stats={[
+      { title: 'Members', amount: '108' },
+      // { title: 'Stars', amount: '24.8K' },
+      // { title: 'Forks', amount: '10.3K' },
+      // { title: 'Users', amount: '48.4K' },
+    ]}
+  />
+  <Testimonials
+    id="testimonials"
+    title="Words from our Community Members"
+    tagline="Testimonials"
+    testimonials={testimonalList}
+    callToAction={{
+      // target: '_blank',
+      text: 'More testimonials...',
+      href: '#',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Become Member',
+        href: '#',
+        // target: '_blank',
+        icon: 'tabler:user',
+      },
+    ]}
+  >
+    <Fragment slot="title">Join NCEF</Fragment>
+
+    <Fragment slot="subtitle">Be part of our community</Fragment>
+  </CallToAction>
+</Layout>

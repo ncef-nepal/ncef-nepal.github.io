@@ -1,0 +1,86 @@
+---
+import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
+import type { BoardMemberGrid } from '~/types';
+import Image from '~/components/common/Image.astro';
+// import Button from './Button.astro';
+
+const { items = [], columns, defaultIcon = 'tabler:user', classes = {} } = Astro.props as BoardMemberGrid;
+
+const {
+  container: containerClass = '',
+  // container: containerClass = "sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+  panel: panelClass = '',
+  title: titleClass = '',
+  description: descriptionClass = '',
+  icon: defaultIconClass = 'text-primary',
+} = classes;
+---
+
+{
+  items && (
+    <div
+      class={twMerge(
+        `grid gap-8 gap-x-12 sm:gap-y-8 ${
+          columns === 4
+            ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+            : columns === 3
+              ? 'lg:grid-cols-3 sm:grid-cols-2'
+              : columns === 2
+                ? 'sm:grid-cols-2 '
+                : ''
+        }`,
+        containerClass
+      )}
+    >
+      {items.map(({ name, title, description, responsibilities, image, classes: itemClasses = {}, socials }) => (
+        <div class={twMerge('relative flex flex-col items-center', panelClass, itemClasses?.panel)}>
+          {image && (
+            <div class="relative w-16 h-16">
+              {typeof image === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                <Image
+                  class="inset-0 object-cover object-top w-full rounded-full shadow-lg ring-4 ring-slate-900/5 md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
+                  widths={[400, 768]}
+                  sizes="(max-width: 768px) 100vw, 432px"
+                  width={432}
+                  height={768}
+                  layout="cover"
+                  src={image?.src}
+                  alt={image?.alt || ''}
+                />
+              )}
+            </div>
+          )}
+          {(!image && defaultIcon) && (
+            <Icon name={defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
+          )}
+          <div class={twMerge('text-lg font-bold', titleClass, itemClasses?.title)}>{name}</div>
+          <div class={twMerge('text-md font-medium', titleClass, itemClasses?.title)}>{title}</div>
+          {socials && (
+            <div class="flex mt-2 gap-2">
+              {socials.map(({ icon, href }) => (
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                  <Icon name={icon} class="w-6 h-6" />
+                </a>
+              ))}
+            </div>
+          )}
+          {description && (
+            <p class={twMerge('self-start text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
+          )}
+          <hr/>
+          {responsibilities && (
+            <h3 class="self-start text-md mt-2">Responsibilities</h3>
+            <ul class="list-disc p-2">
+              {responsibilities.map((responsibility) => (
+                <li class={twMerge(' mt-2', descriptionClass, itemClasses?.description)} set:html={responsibility} />
+              ))}
+            </ul>
+           )}
+        </div>
+      ))}
+    </div>
+  )
+}

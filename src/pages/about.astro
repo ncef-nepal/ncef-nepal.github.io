@@ -1,0 +1,252 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    image={{
+      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Caos Image',
+    }}
+  >
+    <Fragment slot="title">About NCEF</Fragment>
+
+    <Fragment slot="subtitle">Empowering Faith, Engineering Futures</Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    tagline="Introduction"
+    items={[
+      {
+        title: 'Our Roots: The 1990s Christian University Student Movement',
+        description:
+          "Our Fellowship traces its origins to the dynamic Christian University Student Movement in Nepal (NBCBS/University Student Fellowship) during the 1990s. Inspired by the biblical mandate in Matthew 5:13-16, Christian engineering students and graduates united with the vision to be 'salt and light.'",
+        icon: 'tabler:plant',
+      },
+      {
+        title: 'Formation and Growth: Prayer Cells, Bible Study Groups, and Annual Seminars',
+        description:
+          'Encouraged by parachurch organizations and local churches, our members formed prayer cells and Bible study groups across colleges and universities. Annual seminars became a cornerstone, fostering fellowship and a shared commitment to excellence.',
+        icon: 'tabler:leaf',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Legacy</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Global Connections: Partnership with IFES for Leadership Training and CGF',
+        description:
+          'In pursuit of continuous growth, we forged partnerships with the International Fellowship of Evangelical Students (IFES) for Leadership Training and collaborated with Christian Graduate Fellowship (CGF). These global connections enriched our community and broadened our perspectives.',
+        icon: 'tabler:flower',
+      },
+      {
+        title: 'Inclusive Community: Welcoming Diverse Professionals',
+        description:
+          'Beyond Christian engineers, our fellowship extends a warm welcome to professionals such as architects, sub-engineers, overseers, draftspersons, project managers, and surveyors. This diversity enriches our collective knowledge and expertise.',
+        icon: 'tabler:seeding',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Service Beyond Ourselves: Support for Churches and Related Organizations',
+        description:
+          'Driven by a commitment to serve, we offer support to churches and various organizations. From concept planning to construction management, our contributions span diverse projects, including Church Buildings, Orphanage Homes, Bible Colleges, Training Centers, Water Supply, Small Irrigation, and Suspension Bridges.',
+        icon: 'tabler:growth',
+      },
+      {
+        title: 'Join Our Legacy: Embrace Service and Excellence',
+        description:
+          'We invite you to join us in a legacy of service and excellence. Whether you are an aspiring professional or an experienced expert, become a part of our community dedicated to making a positive impact in Nepal and beyond.',
+        icon: 'tabler:north-star',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Mission Widget **************** -->
+
+  <Content
+    id="mission"
+    tagline=""
+    items={[
+      {
+        title: 'Empower, Equip, Encourage',
+        description:
+          'Established by the inspiration of the word of God to be salt and light on Earth (Matthew 5:13-16), NCEF (Nepal) is on a mission to empower, equip, and encourage our members to achieve their full potential in realizing the vision of our Fellowship.',
+        icon: 'tabler:map',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mission:</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Vision Widget **************** -->
+
+  <Content
+    isReversed
+    id="vision"
+    tagline=""
+    items={[
+      {
+        title: 'Transforming Lives',
+        description:
+          'Using the professional skills and talents entrusted to us, our vision is to witness a world transformed by the life-changing reality of the gospel. People discovering Jesus as their Lord and Savior, experiencing the fullness of life He offers.',
+        icon: 'tabler:telescope',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Vision:</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Statement of Faith Widget **************** -->
+
+  <Content
+    id="statement_of_faith"
+    tagline=""
+    items={[
+      {
+        title: 'Anchored in Belief',
+        description:
+          'Our members, rooted in local churches, hold firm to the authority of the Bible and profess the Apostle’s Creed as a summary of our shared faith.',
+        icon: 'tabler:book',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Statement of Faith:</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Statistics about us"
+    stats={[
+      { title: 'Events', amount: '4' },
+      { title: 'members', amount: '248' },
+      { title: 'Seminars', amount: '12' },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Our locations"
+    tagline="Find us"
+    columns={4}
+    items={[
+      {
+        title: 'Kathmandu',
+        description: '1234 Lorem Ipsum St',
+      },
+      {
+        title: 'Lalitpur',
+        description: '5678 Lorem Ipsum St',
+      },
+      {
+        title: 'Pokhara',
+        description: '9012 Lorem Ipsum St',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Reach Out"
+    tagline="Contact us"
+    columns={2}
+    items={[
+      {
+        title: 'Chat with us',
+        description:
+          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Call us',
+        description:
+          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+</Layout>
