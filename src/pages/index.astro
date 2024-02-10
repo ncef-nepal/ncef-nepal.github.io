@@ -21,90 +21,70 @@ const metadata = {
 
 const events = [
   {
-    title: 'Event 1',
-    description: `We provide training in spiritual and professional excellence, encouraging, coaching, and mentoring young engineers to reach their full potential.Description for Event 1 Description for Event 1 Description for Event 1 Description for Event 1 `,
+    title: '4th Meet and Greet',
+    description: `Gathering and Fellowship this Saturday 🙏`,
     icon: 'tabler:star',
-    classes: { class1: 'value1', class2: 'value2' },
     callToAction: { label: 'Register', action: 'registration-link-1' },
     image: {
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: '~/assets/images/patan-church.jpeg',
+      alt: 'Patan Church',
     },
-    badge: 'New',
+    badge: 'Today',
     badgeColor: 'green',
-    href: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-    date: new Date('2023-12-01T10:00:00'),
-    location: 'Event Venue 1',
+    href: '#',
+    date: new Date('2024-02-10T15:30:00'),
+    location: 'Koinonia Patan Church',
     duration: '2 hours',
-    status: 'Cancelled',
+    status: '',
   },
   {
-    title: 'Event 2',
-    description: 'Description for Event 2',
+    title: '3rd Meetup - Khumaltar',
+    description: '',
     icon: 'tabler:calendar',
-    classes: { class1: 'value3', class2: 'value4' },
     callToAction: { label: 'RSVP', action: 'rsvp-link-2' },
     image: {
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      src: '~/assets/images/meet-monthly.jpg',
       alt: 'Steps image',
     },
-    badge: 'Featured',
+    badge: 'Completed',
     badgeColor: 'blue',
-    href: 'event-2-details',
-    date: new Date('2023-12-05T15:30:00'),
-    location: 'Event Venue 2',
-    duration: '3 hours',
+    href: '#',
+    date: new Date('2023-09-30T16:00:00'),
+    location: 'Khumultar, Lalitpur',
+    duration: '2 hours',
   },
   {
-    title: 'Event 3',
-    description: 'Description for Event 3',
+    title: '2nd Meet up',
+    description: '',
     icon: 'tabler:ticket',
-    classes: { class1: 'value5', class2: 'value6' },
-    callToAction: { label: 'Buy Tickets', action: 'ticket-link-3' },
+    callToAction: { label: 'Outing', action: 'ticket-link-3' },
     image: {
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: '~/assets/images/outing2.jpg',
+      alt: 'Outing2',
     },
-    badge: 'Exclusive',
+    badge: 'With Bible Study group',
     badgeColor: 'red',
-    href: 'event-3-details',
+    href: '#',
     date: new Date('2023-12-10T18:00:00'),
-    location: 'Event Venue 3',
-    duration: '4 hours',
+    location: 'Jawalakhel, Lalitpur',
+    duration: '2 hours',
   },
   {
-    title: 'Event 4',
-    description: 'Description for Event 4',
+    title: '100 folds - Annual Conference',
+    description: '100 fold meetup at Pokhara',
     icon: 'tabler:info-circle',
     classes: { class1: 'value7', class2: 'value8' },
     callToAction: { label: 'Learn More', action: 'info-link-4' },
     image: {
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      src: '~/assets/images/100-fold.jpg',
       alt: 'Steps image',
     },
     badge: 'Special',
     badgeColor: 'orange',
     href: 'event-4-details',
     date: new Date('2023-12-15T12:45:00'),
-    location: 'Event Venue 4',
-    duration: '1.5 hours',
-  },
-  {
-    title: 'Event 5',
-    description: 'Description for Event 5',
-    icon: 'tabler:users',
-    classes: { class1: 'value9', class2: 'value10' },
-    callToAction: { label: 'Join Now', action: 'join-link-5' },
-    image: {
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    },
-    badge: 'Limited Seats',
-    badgeColor: 'purple',
-    href: 'event-5-details',
-    date: new Date('2023-12-20T09:30:00'),
-    location: 'Event Venue 5',
-    duration: '2.5 hours',
+    location: 'Pokhara',
+    duration: '3 days',
   },
 ];
 
@@ -382,7 +362,7 @@ const testimonalList = [
       },
       { text: 'About Us', href: '#about' },
     ]}
-    image={{ src: '~/assets/images/blueprint.jpg', alt: 'Community' }}
+    image={{ src: '~/assets/images/ncef-full-i.png', alt: 'Community' }}
   >
     <Fragment slot="title">Nepal Christian Engineer's Fellowship</Fragment>
 
@@ -418,8 +398,9 @@ const testimonalList = [
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/group-pokhara.jpg',
+      alt: 'Group Pokhara',
+      height: 400,
     }}
   >
     <Fragment slot="content">
@@ -451,8 +432,9 @@ const testimonalList = [
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      src: '~/assets/images/small-group-pokhara.jpg',
       alt: 'Blueprint Image',
+      height: 300,
     }}
   >
     <Fragment slot="bg">
@@ -479,8 +461,10 @@ const testimonalList = [
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: '~/assets/images/outing2.jpg',
+      alt: 'Outing',
+      height: 400,
+      caption: 'Outing',
     }}
   >
     <Fragment slot="bg">
@@ -502,8 +486,9 @@ const testimonalList = [
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/talk-session.jpg',
       alt: 'Colorful Image',
+      height: 300,
     }}
   >
     <Fragment slot="content">
@@ -530,8 +515,9 @@ const testimonalList = [
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/meet-monthly.jpg',
       alt: 'Colorful Image',
+      height: 300,
     }}
   >
     <Fragment slot="content">
@@ -557,8 +543,9 @@ const testimonalList = [
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/meet-monthly3.jpg',
+      alt: 'Meet Montly2',
+      height: 300,
     }}
   >
     <Fragment slot="content">
@@ -595,11 +582,11 @@ const testimonalList = [
 
   <!-- Features2 Widget ************** -->
 
-  <Features4 title="Board Members" subtitle="Meet the team behind NCEF" id="board" tagline="Board" items={boardMembers}>
+  <!-- <Features4 title="Board Members" subtitle="Meet the team behind NCEF" id="board" tagline="Board" items={boardMembers}>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features4>
+  </Features4>  ************** -->
 
   <!-- HighlightedPosts Widget ******* -->
 
@@ -634,7 +621,7 @@ const testimonalList = [
       // { title: 'Users', amount: '48.4K' },
     ]}
   />
-  <Testimonials
+  <!-- <Testimonials
     id="testimonials"
     title="Words from our Community Members"
     tagline="Testimonials"
@@ -645,7 +632,7 @@ const testimonalList = [
       href: '#',
       icon: 'tabler:chevron-right',
     }}
-  />
+  /> ************** -->
 
   <!-- CallToAction Widget *********** -->
 

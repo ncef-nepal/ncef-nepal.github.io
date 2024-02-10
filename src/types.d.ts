@@ -303,3 +303,17 @@ export interface Content extends Headline, Widget {
 }
 
 export interface Contact extends Headline, Form, Widget {}
+
+export interface VacancyCardProps {
+  id?: number | string;
+  image?: Image;
+  title: string;
+  company: string;
+  location: string;
+  applyBy?: string;
+  count: number;
+  keySkills?: string[];
+  education?: string[];
+  link?: string;
+  description?: string;
+}
