@@ -54,6 +54,10 @@ export const headerData = {
       href: getPermalink('/contact'),
     },
     {
+      text: 'Vacancy',
+      href: getPermalink('/vacancy'),
+    },
+    {
       text: 'Publishing',
       href: getBlogPermalink(),
     },
