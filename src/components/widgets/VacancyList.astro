@@ -1,0 +1,48 @@
+---
+// Import the VacancyCard component
+import VacancyCard from './VacancyCard.astro';
+import type { VacancyCardProps } from '~/types';
+
+// Sample list of job vacancies
+const defaultVacancies: VacancyCardProps[] = [
+  {
+    id: 1,
+    image: {src: '~/assets/images/mero-rojgari.jpg'},
+    title: 'Quality Assurance Engineer',
+    company: 'Logpoint Nepal',
+    location: 'Jawalakhel, Lalitpur',
+    applyBy: '2 weeks, 4 days from now',
+    keySkills: ['QA', 'Test Automation', 'Selenium'],
+    count: 1
+  },
+  {
+    id: 2,
+    image: { src: '~/assets/images/hiring.jpg', },
+    title: 'Design Coordinator / Senior Engineer',
+    company: 'Hydroplan',
+    location: 'Kathmandu',
+    applyBy: '2 weeks, 4 days from now',
+    keySkills: ['Design Management', 'Construction Management', 'Autocad', 'BIM'],
+    count: 1
+  },
+];
+
+const { vacancies = defaultVacancies } = Astro.props as { vacancies: VacancyCardProps[] };
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {
+    vacancies.map((vacancy: VacancyCardProps) => (
+      <VacancyCard
+        image={vacancy.image}
+        title={vacancy.title}
+        company={vacancy.company}
+        location={vacancy.location}
+        applyBy={vacancy.applyBy}
+        education={vacancy.education}
+        description={vacancy.description}
+        keySkills={vacancy.keySkills}
+      />
+    ))
+  }
+</div>

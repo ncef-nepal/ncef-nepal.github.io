@@ -1,0 +1,98 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero3.astro';
+
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import VacancyList from '~/components/widgets/VacancyList.astro';
+const metadata = {
+  title: 'NCEF Vacancy Page',
+  description: 'Vacancy for Nepal Christian Engineer Fellowship',
+  ignoreTitleTemplate: true,
+};
+
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Find the Right People"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'View Jobs',
+        href: '#vacancy',
+        icon: 'tabler:user',
+      },
+    ]}
+    image={{ src: '~/assets/images/ncef-full.png', alt: 'NCEF Vacancy' }}
+  >
+    <Fragment slot="title">NCEF Vacancy List</Fragment>
+
+    <Fragment slot="subtitle">
+      <!-- <span class="hidden sm:inline">
+        <span class="font-semibold">NCEF</span> is a unique platform cultivating a community where aspiring Christian
+        engineers in Nepal flourish. Through immersive experiences, mentorship, and networking, we blend technical
+        excellence with unwavering values for an innovative future.
+      </span> -->
+      <span class="block mb-1 sm:hidden font-bold text-blue-600"></span>
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+  <VacancyList />
+
+  <!-- Features2 Widget ************** -->
+
+  <!-- <Features4 title="Board Members" subtitle="Meet the team behind NCEF" id="board" tagline="Board" items={boardMembers}>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features4>  ************** -->
+
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    id="stats"
+    tagline="stats"
+    stats={[
+      { title: 'Members', amount: '108' },
+      { title: 'Jobs', amount: '48' },
+      // { title: 'Forks', amount: '10.3K' },
+      // { title: 'Users', amount: '48.4K' },
+    ]}
+  />
+  <!-- <Testimonials
+    id="testimonials"
+    title="Words from our Community Members"
+    tagline="Testimonials"
+    testimonials={testimonalList}
+    callToAction={{
+      // target: '_blank',
+      text: 'More testimonials...',
+      href: '#',
+      icon: 'tabler:chevron-right',
+    }}
+  /> ************** -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Become a Member',
+        href: '#',
+        // target: '_blank',
+        icon: 'tabler:user',
+      },
+    ]}
+  >
+    <Fragment slot="title">Join NCEF</Fragment>
+
+    <Fragment slot="subtitle">Be part of our community</Fragment>
+  </CallToAction>
+</Layout>
