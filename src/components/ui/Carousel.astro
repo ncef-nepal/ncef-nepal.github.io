@@ -1,0 +1,25 @@
+---
+import type { Form, Image } from '~/types';
+import Button from '~/components/ui/Button.astro';
+interface CarouselProps {
+  images: (string | Image)[];
+}
+
+
+const { images, classNames } = Astro.props as CarouselProps;
+---
+
+<div class={`carousel space-x-2 rounded-box ${classNames}`}>
+  {
+    images.map((image) => (
+      <div class="carousel-item">
+        {typeof image === 'string' ? (
+          <img src={image} class="rounded-box" />
+        ) : (
+          <img src={image.src} alt={image.alt} class="rounded-box" />
+        )}
+      </div>
+    ))
+  }
+</div>
+
