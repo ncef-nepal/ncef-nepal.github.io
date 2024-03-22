@@ -1,0 +1,14 @@
+---
+import Image from '../common/Image.astro';
+const { images } = Astro.props as { images: { src: string; alt?: string }[] };
+---
+
+<div class="grid grid-cols-2 gap-2">
+  {
+    images.slice(0,4).map((image) => (
+      <div>
+        <Image class="h-auto max-w-full rounded-lg" src={image.src} alt={image.alt} />
+      </div>
+    ))
+  }
+</div>
