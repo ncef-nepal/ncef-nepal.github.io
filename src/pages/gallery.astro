@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Carousel from '~/components/ui/Carousel.astro';
+import GalleryWithHero from '~/components/widgets/GalleryWithHero.astro';
+import GalleryMasonry from '~/components/widgets/GalleryMasonry.astro';
 import { galleryImages } from '~/data';
 import Content from '~/components/widgets/Content.astro';
 import Hero from '~/components/widgets/Hero.astro';
@@ -8,19 +9,15 @@ const metadata = {
   title: 'NCEF gallery',
 };
 
-const heroImages = galleryImages.map(events => {
-  return events.images[0];
-})
 ---
 
 <Layout metadata={metadata}>
   <Hero>
     <Fragment slot="title">NCEF Gallery</Fragment>
-    
-    <Fragment slot="subtitle">Empowering Faith, Engineering Futures</Fragment>
+
     <Fragment slot="image">
       <div class="grid place-items-center">
-        <Carousel images={heroImages} classNames="carousel-center max-w-xl p-4"/>
+        <GalleryMasonry />
       </div>
     </Fragment>
   </Hero>
@@ -28,33 +25,29 @@ const heroImages = galleryImages.map(events => {
   <!-- Content Widget **************** -->
 
   {
-    galleryImages.map(event => (
+    galleryImages.map((event) => (
       <Content
         id={`galary ${event.title}`}
         items={[
           {
             title: event.title,
-            description: event.description
+            description: event.description,
           },
         ]}
-
       >
         <Fragment slot="content">
           <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Legacy</h3>
         </Fragment>
-    
+
         <Fragment slot="bg">
-          <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+          <div class="absolute inset-0 bg-blue-50 dark:bg-transparent" />
         </Fragment>
         <Fragment slot="image">
           <div class="grid place-items-center">
-            <Carousel images={heroImages} classNames="p-4"/>
+            <GalleryWithHero images={event.images} classNames="p-4" />
           </div>
         </Fragment>
       </Content>
-
     ))
   }
-  {galleryImages.map((event) => <section></section>)}
-  <Carousel images={galleryImages} />
 </Layout>
