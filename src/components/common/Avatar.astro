@@ -1,0 +1,24 @@
+---
+import Image from '~/components/common/Image.astro';
+import { twMerge } from 'tailwind-merge';
+
+const { src, alt, varient } = Astro.props;
+---
+
+<div class="inset-0 relative w-16 h-16">
+  <Image
+    class={twMerge(
+      'w-full rounded-full shadow-lg ring-4 ring-slate-900/5 md:absolute md:h-full bg-gray-400 dark:bg-slate-700',
+      varient
+    )}
+    sizes="(max-width: 768px) 100vw, 432px"
+    layout="cover"
+    src={src}
+    alt={alt || ''}
+    widths={[64, 64]}
+    width={64}
+    height={64}
+    loading="eager"
+    decoding="async"
+  />
+</div>
