@@ -58,11 +58,30 @@ const postCollection = defineCollection({
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
     author: z.string().optional(),
+    authorAvatar: z.string().optional(),
 
     metadata: metadataDefinition(),
   }),
 });
 
+const authorCollection = defineCollection({
+  schema: z.object({
+    name: z.string(),
+    bio: z.string().optional(),
+    avatar: z.string().optional(),
+
+    metadata: metadataDefinition(),
+    socials: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string().url(),
+        icon: z.string().optional(),
+      })
+    ),
+  }),
+});
+
 export const collections = {
   post: postCollection,
+  authorCollection,
 };

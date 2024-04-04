@@ -29,6 +29,7 @@ export interface Post {
   tags?: Array<string>;
   /**  */
   author?: string;
+  authorAvatar?: string;
 
   /**  */
   metadata?: MetaData;
