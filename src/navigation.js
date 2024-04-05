@@ -73,29 +73,27 @@ export const footerData = {
     {
       title: 'About',
       links: [
-        { text: 'History', href: '#' },
-        { text: 'Mission', href: '#' },
-        { text: 'Vision', href: '#' },
-        { text: 'Statement of Faith', href: '#' },
+        { text: 'History', href: '/#about' },
+        { text: 'Mission', href: '/#mission' },
+        { text: 'Vision', href: '/#vision' },
+        { text: 'Statement of Faith', href: '/#statement_of_faith' },
       ],
     },
     {
       title: 'Community',
       links: [
-        { text: 'Code of Conduct', href: '#' },
-        { text: 'Events', href: '#' },
-        { text: 'Participating', href: '#' },
-        { text: 'Contributing', href: '#' },
+        { text: 'Code of Conduct', href: '/terms' },
+        { text: 'Events', href: '/#events' },
+        { text: 'Contact', href: '/contact' },
+        { text: 'Publications', href: '/articles' },
       ],
     },
     {
       title: 'Support',
       links: [
-        { text: 'Mentoring', href: '#' },
+        { text: 'Vacancy', href: '/vacancy' },
         { text: 'Training', href: '#' },
         { text: 'Networking', href: '#' },
-        { text: 'Skill Development', href: '#' },
-        { text: 'Professional Development', href: '#' },
       ],
     },
     // {
@@ -116,11 +114,11 @@ export const footerData = {
     //   { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    // { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/NCEF23' },
     // { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
     // { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     // { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
-  footNote: `Nepal Christian Engineers Fellowship Moto`,
+  footNote: `EMPOWERING FAITH, ENGINEERING FUTURES`,
 };

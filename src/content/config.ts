@@ -77,11 +77,11 @@ const authorCollection = defineCollection({
         url: z.string().url(),
         icon: z.string().optional(),
       })
-    ),
+    ).optional(),
   }),
 });
 
 export const collections = {
   post: postCollection,
-  authorCollection,
+  author: authorCollection,
 };
