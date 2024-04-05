@@ -83,5 +83,5 @@ const authorCollection = defineCollection({
 
 export const collections = {
   post: postCollection,
-  authorCollection,
+  author: authorCollection,
 };
